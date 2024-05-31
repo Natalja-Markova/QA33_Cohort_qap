@@ -1,5 +1,4 @@
 package com.ait.hw;
-
 import com.ait.lesson.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -30,8 +29,5 @@ public class Homework_3 extends BaseTest {
         WebElement elementByLinkText = getElementBy(By.xpath("//a[contains(text(),'Computers')]"));
         Assertions.assertTrue(elementByLinkText.isDisplayed(), "elementByLinkText нет на странице");
 
-
     }
-
-
 }

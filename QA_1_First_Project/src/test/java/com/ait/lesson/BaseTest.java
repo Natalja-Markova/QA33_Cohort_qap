@@ -61,7 +61,9 @@ public class BaseTest {
         return wait.until(ExpectedConditions.alertIsPresent());
     }
     protected void fillInputField(By locator,String value ){
-        WebElement element= getElementBy(locator);
+        WebElement element = waitForClickableElement(locator);
+        element.click();
+        //WebElement element= getElementBy(locator);
         element.clear();
         element.sendKeys(value);
         Assertions.assertEquals(value, element.getAttribute("value"),"Введеный текст отличается от того что");

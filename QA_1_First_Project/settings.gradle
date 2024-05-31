@@ -1,2 +1,3 @@
 rootProject.name = 'QA_1_First_Project'
+include 'QA_33_Phonebook_v1'
 
