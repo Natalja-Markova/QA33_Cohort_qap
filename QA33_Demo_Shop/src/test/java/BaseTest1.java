@@ -16,7 +16,7 @@ public class BaseTest1 {
     WebDriverWait wait;
     static final String URL_Demo_Web_Shop = "https://demowebshop.tricentis.com/";
     static final String LOGIN = "Log in";
-    static final User TEST_USER =new User ("manuel@gm.com","Manuel1234$");
+    static final User TEST_USER = new User("manuel@gm.com", "Manuel1234$");
 
     @BeforeEach
     void startDriver() {
@@ -26,6 +26,7 @@ public class BaseTest1 {
         driver.manage().window().maximize();
         driver.get(URL_Demo_Web_Shop);
     }
+
     @AfterEach
     void quitDriver() {
         driver.quit();
@@ -35,6 +36,7 @@ public class BaseTest1 {
     protected WebElement getElementBy(By locator) {
         return wait.until(ExpectedConditions.visibilityOf(driver.findElement(locator)));
     }
+
     private WebElement waitForClickableElement(By locator) {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
@@ -51,21 +53,24 @@ public class BaseTest1 {
         element.sendKeys(value);
         Assertions.assertEquals(value, element.getAttribute("value"), "Введенный текст отличается от того что в элементе");
     }
+
     protected void clickOnElement(By locator) {
         WebElement element = waitForClickableElement(locator);
         element.click();
     }
 
-   protected void login(String email, String password, String LOGIN) {
+    protected void login(String email, String password, String LOGIN) {
         clickOnElement(By.xpath("//a[contains(text(),'Log in')]"));
         fillInputField(By.id("Email"), email);
         fillInputField(By.id("Password"), password);
-        clickOnElement(By.xpath("//input[@value='Log in']" ));
+        clickOnElement(By.xpath("//input[@value='Log in']"));
 
     }
-        protected void loginTestUser(String email,String password ,String LOGIN) {
-            login("manuel@gm.com","Manuel1234$","Log in");
-        }
+
+    protected void loginTestUser(String email, String password, String LOGIN) {
+        login("manuel@gm.com", "Manuel1234$", "Log in");
+    }
+
     protected void waitInSeconds(int seconds) {
         try {
             Thread.sleep(Duration.ofSeconds(seconds).toMillis());
