@@ -2,3 +2,5 @@ rootProject.name = 'cohort33e-qap'
 include 'QA_33_Phonebook_v1'
 include 'QA_1_First_Project'
 include 'QA33_Demo_Shop'
+include 'QA_33_Demo_Shop_v2'
+

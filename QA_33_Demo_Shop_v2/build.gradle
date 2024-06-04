@@ -3,21 +3,16 @@ plugins {
 }
 
 group = 'org.example'
-version = '1.0-SNAPSHOT'
+version = 'unspecified'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-//  testImplementation project(path: ':')
     implementation 'org.testng:testng:7.10.1'
     implementation 'org.seleniumhq.selenium:selenium-java:4.21.0'
 }
-
-/*test {
-    useJUnitPlatform()
-}*/
 test {
     useTestNG()
 }
